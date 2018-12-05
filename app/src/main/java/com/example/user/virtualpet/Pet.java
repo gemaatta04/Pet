@@ -36,18 +36,18 @@ public class Pet {
     public void feed() {
         // something interactive should happen here...
         // like the image changes to it eating for 3 seconds
-        happy++;
-        health++;
+        happy += 2;
+        health += 2;
         levelUp(type);
     }
     public void clean() {
         // image changes to it being washed for 3 seconds
-        health += 2;
+        health += 5;
         levelUp(type);
     }
     public void play() {
         // not sure what will happen in play yet but image changes too
-        happy += 2;
+        happy += 5;
         levelUp(type);
     }
     private void levelUp(Pet type) {

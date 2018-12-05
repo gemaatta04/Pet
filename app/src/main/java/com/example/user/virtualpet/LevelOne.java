@@ -14,17 +14,15 @@ public class LevelOne extends Pet {
      * Check if the maximum happiness and health points have been met.
      * Called by the levelUp() method in Pet parent class.
      * Also resets the happiness and health points so that it never goes over the maximum.
-     *
-     * @param pet the pet that is passed.
      */
-    private boolean meter(LevelOne pet) {
-        if (pet.getHealth() > MAX_HEALTH) {
-            pet.setHealth(MAX_HEALTH);
+    public boolean meter() {
+        if (this.getHealth() > MAX_HEALTH) {
+            this.setHealth(MAX_HEALTH);
         }
-        if (pet.getHappy() > MAX_HAPPY) {
-            pet.setHappy(MAX_HAPPY);
+        if (this.getHappy() > MAX_HAPPY) {
+            this.setHappy(MAX_HAPPY);
         }
-        if (pet.getHappy() >= MAX_HAPPY && pet.getHealth() >= MAX_HEALTH) {
+        if (this.getHappy() >= MAX_HAPPY && this.getHealth() >= MAX_HEALTH) {
             return true;
         }
         return false;
