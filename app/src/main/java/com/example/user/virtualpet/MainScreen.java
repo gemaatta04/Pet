@@ -13,11 +13,10 @@ public class MainScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
 
-        if (getIntent().hasExtra("nameView")) {
-            TextView nameTextView = (TextView) findViewById(R.id.nameTextView);
-            String name = getIntent().getExtras().getString("nameView");
-            nameTextView.setText(name);
-        }
+        TextView nameTextView = (TextView) findViewById(R.id.nameTextView);
+        String setName = getIntent().getStringExtra("nameView");
+        nameTextView.setText(setName);
+
         Button feedBtn = (Button) findViewById(R.id.feedBtn);
         feedBtn.setOnClickListener(new View.OnClickListener() {
             @Override
