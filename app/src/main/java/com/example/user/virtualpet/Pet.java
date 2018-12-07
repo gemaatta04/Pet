@@ -1,6 +1,8 @@
 package com.example.user.virtualpet;
 
-public class Pet {
+import java.io.Serializable;
+
+public class Pet implements Serializable {
     /** Name of the Pet. */
     private String name;
     /** Type of Pet. */

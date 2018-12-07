@@ -1,6 +1,8 @@
 package com.example.user.virtualpet;
 
-public class LevelOne extends Pet {
+import java.io.Serializable;
+
+public class LevelOne extends Pet implements Serializable {
     /** Happiness points needed to level up. */
     private static final int MAX_HAPPY = 30;
     /** Health points needed to level up. */
