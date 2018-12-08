@@ -3,4 +3,6 @@
     <string name="feedBtn">Feed</string>
     <string name="cleanBtn">Clean</string>
     <string name="playBtn">Play</string>
+    <string name="happy_points">Happy: </string>
+    <string name="health_points">Health: </string>
 </resources>
