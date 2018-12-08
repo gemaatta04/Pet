@@ -32,13 +32,14 @@ public class MainScreen extends AppCompatActivity {
         feedBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //display a new image for a certain amount of time
+                /* Changes the points displayed at the top. */
                 pet.feed();
                 happyPointsTV.setText(pet.getHappy() + "");
                 healthPointsTV.setText(pet.getHealth() + "");
 
                 /* *************** TIMER FUNCTION TO CHANGE IMAGE GOES HERE ************ */
 
+                /* Changes the main image to the new level if levelUp returns true. */
                 if (pet.levelUp(pet.getType())) {
                     if ((pet.getType()).equals("Level Two")) {
                         typeDisplayIV.setImageDrawable(getDrawable(R.drawable.leveltwo));
@@ -54,13 +55,14 @@ public class MainScreen extends AppCompatActivity {
         cleanBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //display a new image for a certain amount of time
+                /* Changes the points displayed at the top. */
                 pet.clean();
                 happyPointsTV.setText(pet.getHappy() + "");
                 healthPointsTV.setText(pet.getHealth() + "");
 
                 /* *************** TIMER FUNCTION TO CHANGE IMAGE GOES HERE ************ */
 
+                /* Changes the main image to the new level if levelUp returns true. */
                 if (pet.levelUp(pet.getType())) {
                     if ((pet.getType()).equals("Level Two")) {
                         typeDisplayIV.setImageDrawable(getDrawable(R.drawable.leveltwo));
@@ -76,12 +78,14 @@ public class MainScreen extends AppCompatActivity {
         playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /* Changes the points displayed at the top. */
                 pet.play();
                 happyPointsTV.setText(pet.getHappy() + "");
                 healthPointsTV.setText(pet.getHealth() + "");
 
                 /* *************** TIMER FUNCTION TO CHANGE IMAGE GOES HERE ************ */
 
+                /* Changes the main image to the new level if levelUp returns true. */
                 if (pet.levelUp(pet.getType())) {
                     if ((pet.getType()).equals("Level Two")) {
                         typeDisplayIV.setImageDrawable(getDrawable(R.drawable.leveltwo));

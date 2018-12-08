@@ -20,8 +20,8 @@ public class Setup extends AppCompatActivity {
         goBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /* Creates a new Pet instance using input in setNameEditText. */
-                EditText setNameEditText = (EditText) findViewById(R.id.setNameEditText);
+                /* Uses input from this screen to set name in the main activity. */
+                EditText setNameEditText = findViewById(R.id.setNameEditText);
                     // This doesn't check for invalid inputs. Could maybe add that later.
                 final String setName = setNameEditText.getText().toString();
 

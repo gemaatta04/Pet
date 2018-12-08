@@ -1,8 +1,8 @@
 package com.example.user.virtualpet;
 
-import java.io.Serializable;
+//import java.io.Serializable;
 
-public class Pet implements Serializable {
+public class Pet {
     /** Name of the Pet. */
     private String name;
     /** Type of Pet. */
@@ -59,13 +59,20 @@ public class Pet implements Serializable {
         meter();
         //levelUp(type);
     }
+    /**
+     * Called in the main activity on each button click.
+     * If it returns true, then the image changes in the main activity.
+     *
+     * 1. Checks what the current type so it can level up appropriately.
+     * 2. check if the happy and health meters have been reached.
+     *      >> This is a separate boolean function in each level class.
+     * 3. If true, the type is reset to the next level.
+     * 4. happiness and health are reset, as well as the maximums.
+     *
+     * @param type the current type saved by the class.
+     * @return returns true if meter() returns true;
+     */
     public boolean levelUp(String type) {
-        /*
-         * 2. check if the happy and health meters have been reached.
-         *      >> This is a separate boolean function in each level class.
-         * 3. If true, the type is a new instance of the next level.
-         * 4. happiness and health are reset.
-         */
         if (type.equals("Level One")) {
             if (meter()) {
                 this.type = "Level Two";
@@ -90,7 +97,7 @@ public class Pet implements Serializable {
     }
     /**
      * Check if the maximum happiness and health points have been met.
-     * Called by the levelUp() method in Pet parent class.
+     * Called by the levelUp() method.
      * Also resets the happiness and health points so that it never goes over the maximum.
      */
     private boolean meter() {
