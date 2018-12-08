@@ -46,20 +46,21 @@ public class Pet implements Serializable {
     public void feed() {
         happy += 2;
         health += 2;
-        levelUp(type);
+        meter();
+        //levelUp(type);
     }
     public void clean() {
-        // image changes to it being washed for 3 seconds
         health += 5;
-        levelUp(type);
+        meter();
+        //levelUp(type);
     }
     public void play() {
-        // not sure what will happen in play yet but image changes too
         happy += 5;
-        levelUp(type);
+        meter();
+        //levelUp(type);
     }
     public boolean levelUp(String type) {
-        /* 1. downcast to the appropriate Pet level.
+        /*
          * 2. check if the happy and health meters have been reached.
          *      >> This is a separate boolean function in each level class.
          * 3. If true, the type is a new instance of the next level.

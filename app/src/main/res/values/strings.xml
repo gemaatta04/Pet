@@ -5,4 +5,5 @@
     <string name="playBtn">Play</string>
     <string name="happy_points">Happy: </string>
     <string name="health_points">Health: </string>
+    <string name="typeDisplayIV">Pet Type</string>
 </resources>

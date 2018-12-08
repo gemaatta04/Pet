@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainScreen extends AppCompatActivity {
@@ -20,6 +21,9 @@ public class MainScreen extends AppCompatActivity {
         nameTextView.setText(setName);
         final Pet pet = new Pet(setName);
 
+        /* Displays the pet type. */
+        final ImageView typeDisplayIV = findViewById(R.id.typeDisplayIV);
+
         /* Displays the happy and health points in appropriate TextViews */
         final TextView happyPointsTV = findViewById(R.id.happyPointsTV);
         final TextView healthPointsTV = findViewById(R.id.healthPointsTV);
@@ -32,6 +36,17 @@ public class MainScreen extends AppCompatActivity {
                 pet.feed();
                 happyPointsTV.setText(pet.getHappy() + "");
                 healthPointsTV.setText(pet.getHealth() + "");
+
+                /* *************** TIMER FUNCTION TO CHANGE IMAGE GOES HERE ************ */
+
+                if (pet.levelUp(pet.getType())) {
+                    if ((pet.getType()).equals("Level Two")) {
+                        typeDisplayIV.setImageDrawable(getDrawable(R.drawable.leveltwo));
+                    }
+                    if ((pet.getType()).equals("Level Three")) {
+                        typeDisplayIV.setImageDrawable(getDrawable(R.drawable.levelthree));
+                    }
+                }
             }
         });
 
@@ -43,8 +58,17 @@ public class MainScreen extends AppCompatActivity {
                 pet.clean();
                 happyPointsTV.setText(pet.getHappy() + "");
                 healthPointsTV.setText(pet.getHealth() + "");
-                // Need to write a levelUp boolean function
-                // Function will pass new information to a level up activity
+
+                /* *************** TIMER FUNCTION TO CHANGE IMAGE GOES HERE ************ */
+
+                if (pet.levelUp(pet.getType())) {
+                    if ((pet.getType()).equals("Level Two")) {
+                        typeDisplayIV.setImageDrawable(getDrawable(R.drawable.leveltwo));
+                    }
+                    if ((pet.getType()).equals("Level Three")) {
+                        typeDisplayIV.setImageDrawable(getDrawable(R.drawable.levelthree));
+                    }
+                }
             }
         });
 
@@ -52,11 +76,20 @@ public class MainScreen extends AppCompatActivity {
         playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //display a new image for a certain amount of time
                 pet.play();
                 happyPointsTV.setText(pet.getHappy() + "");
                 healthPointsTV.setText(pet.getHealth() + "");
-                // levelUp boolean activity
+
+                /* *************** TIMER FUNCTION TO CHANGE IMAGE GOES HERE ************ */
+
+                if (pet.levelUp(pet.getType())) {
+                    if ((pet.getType()).equals("Level Two")) {
+                        typeDisplayIV.setImageDrawable(getDrawable(R.drawable.leveltwo));
+                    }
+                    if ((pet.getType()).equals("Level Three")) {
+                        typeDisplayIV.setImageDrawable(getDrawable(R.drawable.levelthree));
+                    }
+                }
             }
         });
     }

@@ -24,8 +24,6 @@ public class Setup extends AppCompatActivity {
                 EditText setNameEditText = (EditText) findViewById(R.id.setNameEditText);
                     // This doesn't check for invalid inputs. Could maybe add that later.
                 final String setName = setNameEditText.getText().toString();
-                    // This needs to also be passed to the next activity.
-                //Pet pet = new Pet(setName);
 
                 Intent startGame = new Intent(getApplicationContext(), MainScreen.class);
                 startGame.putExtra("nameView", setName);
