@@ -1,13 +1,18 @@
 package com.example.user.virtualpet;
 
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainScreen extends AppCompatActivity {
+
+    Timer timer;
 
 
     @Override
@@ -15,6 +20,20 @@ public class MainScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
 
+        timer = new Timer();
+        /*timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                if (pet.getType().equals("Level One")) {
+                    typeDisplayIV.setImageDrawable(getDrawable(R.drawable.clean1));
+                } else if (pet.getType().equals("Level Two")) {
+                    typeDisplayIV.setImageDrawable(getDrawable(R.drawable.clean2));
+                } else if (pet.getType().equals("Level Three")) {
+                    typeDisplayIV.setImageDrawable(getDrawable(R.drawable.clean3));
+                }
+                finish();
+            }
+        }, 3000);*/
         /* Displays the name set in activity_setup */
         TextView nameTextView = findViewById(R.id.nameTextView);
         String setName = getIntent().getStringExtra("nameView");
@@ -38,6 +57,28 @@ public class MainScreen extends AppCompatActivity {
                 healthPointsTV.setText(pet.getHealth() + "");
 
                 /* *************** TIMER FUNCTION TO CHANGE IMAGE GOES HERE ************ */
+                    if (pet.getType().equals("Level One")) {
+                            typeDisplayIV.setImageDrawable(getDrawable(R.drawable.feed1));
+                        } else if (pet.getType().equals("Level Two")) {
+                            typeDisplayIV.setImageDrawable(getDrawable(R.drawable.feed2));
+                        } else if (pet.getType().equals("Level Three")) {
+                            typeDisplayIV.setImageDrawable(getDrawable(R.drawable.feed3));
+                        }
+                timer.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        if (pet.getType().equals("Level One")) {
+                            typeDisplayIV.setImageDrawable(getDrawable(R.drawable.levelone));
+                        }
+                        if ((pet.getType()).equals("Level Two")) {
+                            typeDisplayIV.setImageDrawable(getDrawable(R.drawable.leveltwo));
+                        }
+                        if ((pet.getType()).equals("Level Three")) {
+                            typeDisplayIV.setImageDrawable(getDrawable(R.drawable.levelthree));
+                        }
+                        //finish();
+                    }
+                }, 3000);
 
                 /* Changes the main image to the new level if levelUp returns true. */
                 if (pet.levelUp(pet.getType())) {
@@ -61,6 +102,43 @@ public class MainScreen extends AppCompatActivity {
                 healthPointsTV.setText(pet.getHealth() + "");
 
                 /* *************** TIMER FUNCTION TO CHANGE IMAGE GOES HERE ************ */
+                /*Runnable r = new Runnable(){
+                    public void run(){
+                        if (pet.getType().equals("Level One")) {
+                            typeDisplayIV.setImageDrawable(getDrawable(R.drawable.clean1));
+                        } else if (pet.getType().equals("Level Two")) {
+                            typeDisplayIV.setImageDrawable(getDrawable(R.drawable.clean2));
+                        } else if (pet.getType().equals("Level Three")) {
+                            typeDisplayIV.setImageDrawable(getDrawable(R.drawable.clean3));
+                        }
+
+                    }
+                };
+                typeDisplayIV.postDelayed(r,3000); // set first time for 3 seconds*/
+                if (pet.getType().equals("Level One")) {
+                    typeDisplayIV.setImageDrawable(getDrawable(R.drawable.clean1));
+                } else if (pet.getType().equals("Level Two")) {
+                    typeDisplayIV.setImageDrawable(getDrawable(R.drawable.clean2));
+                } else if (pet.getType().equals("Level Three")) {
+                    typeDisplayIV.setImageDrawable(getDrawable(R.drawable.clean3));
+                }
+
+                timer.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        if (pet.getType().equals("Level One")) {
+                            typeDisplayIV.setImageDrawable(getDrawable(R.drawable.levelone));
+                        }
+                        if ((pet.getType()).equals("Level Two")) {
+                            typeDisplayIV.setImageDrawable(getDrawable(R.drawable.leveltwo));
+                        }
+                        if ((pet.getType()).equals("Level Three")) {
+                            typeDisplayIV.setImageDrawable(getDrawable(R.drawable.levelthree));
+                        }
+                        //finish();
+                    }
+                }, 3000);
+
 
                 /* Changes the main image to the new level if levelUp returns true. */
                 if (pet.levelUp(pet.getType())) {
@@ -84,6 +162,28 @@ public class MainScreen extends AppCompatActivity {
                 healthPointsTV.setText(pet.getHealth() + "");
 
                 /* *************** TIMER FUNCTION TO CHANGE IMAGE GOES HERE ************ */
+                    if (pet.getType().equals("Level One")) {
+                            typeDisplayIV.setImageDrawable(getDrawable(R.drawable.play1));
+                        } else if (pet.getType().equals("Level Two")) {
+                            typeDisplayIV.setImageDrawable(getDrawable(R.drawable.play2));
+                        } else if (pet.getType().equals("Level Three")) {
+                            typeDisplayIV.setImageDrawable(getDrawable(R.drawable.play3));
+                        }
+                timer.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        if (pet.getType().equals("Level One")) {
+                            typeDisplayIV.setImageDrawable(getDrawable(R.drawable.levelone));
+                        }
+                        if ((pet.getType()).equals("Level Two")) {
+                            typeDisplayIV.setImageDrawable(getDrawable(R.drawable.leveltwo));
+                        }
+                        if ((pet.getType()).equals("Level Three")) {
+                            typeDisplayIV.setImageDrawable(getDrawable(R.drawable.levelthree));
+                        }
+                        //finish();
+                    }
+                }, 3000);
 
                 /* Changes the main image to the new level if levelUp returns true. */
                 if (pet.levelUp(pet.getType())) {
